@@ -1,19 +1,65 @@
-# 🕷️ 軟體情報自動化抓取與 CSV 報表匯出工具
+軟體情報自動化抓取與 CSV 報表匯出工具
 
-這是一個基於 Python 打造的網頁爬蟲工具，能自動檢索 Soft_Job 版面上的關鍵字情報，並將結果格式化導出至 CSV 報表檔中。
+以 Python 製作的網頁爬蟲工具，可自動擷取 PTT Soft_Job 版文章資訊，依關鍵字篩選，並將結果匯出為 CSV 報表。
 
-## 🌟 核心功能
-- **資料擷取**：自動解析 PTT 文章列表，擷取日期、標題、作者與文章連結。
-- **關鍵字過濾**：可自訂關注主題（如：徵才、Junior、Python、面試），精準篩選目標內容。
-- **資料持久化**：支援自動新增與追加模式寫入 CSV，並採用 `utf-8-sig` 編碼避免 Excel 開啟時中文亂碼。
+核心功能
 
-## 🛠️ 使用技術
-- **Language**: Python
-- **Libraries**: Requests, BeautifulSoup4, CSV, Datetime
+文章資料擷取：使用 Requests 取得 PTT 文章列表，並以 BeautifulSoup 解析文章日期、標題、作者與文章連結。
 
-## 🚀 本地端執行步驟
+關鍵字篩選：依照設定的關鍵字篩選文章，例如「徵才」、「Junior」、「Python」、「職缺」、「面試」與「分享」。
 
-1. Clone 本專案：
-```bash
-https://github.com/mingyu-99/tech-info-scraper.git
-cd tech-info-scraper
+CSV 報表匯出：將符合條件的文章資訊寫入 CSV，方便後續檢視與整理。
+
+中文編碼處理：使用 utf-8-sig 編碼，降低 CSV 在 Excel 開啟時出現中文亂碼的機率。
+
+抓取時間記錄：記錄資料擷取時間，方便了解報表產生的時間。
+
+使用技術
+
+Language：Python
+
+Libraries：Requests、BeautifulSoup4、csv、datetime
+
+Output：CSV
+
+本地端執行方式
+
+1. 從 GitHub 專案頁面下載 ZIP，解壓縮後開啟專案資料夾。
+
+2. 開啟終端機，切換到解壓縮後的專案資料夾。
+
+3. 安裝程式實際使用的套件。若專案使用 Requests 與 BeautifulSoup4，可執行：
+
+pip install requests beautifulsoup4
+
+4. 執行爬蟲程式（請依專案中的實際檔名調整）：
+
+python "job_crawler(1).py"
+
+5. 程式執行後，確認輸出的 CSV 檔案名稱與儲存位置。
+
+輸出資料欄位
+
+文章日期
+
+文章標題
+
+作者
+
+文章連結
+
+抓取時間
+
+注意事項
+
+執行前請確認網路連線正常。
+
+網頁結構若有變動，可能需要調整 HTML 解析方式。
+
+請合理控制請求頻率，並遵守網站使用規範。
+
+若程式採用追加模式寫入 CSV，多次執行可能出現重複文章；可再依文章連結加入去重邏輯。
+
+專案簡介
+
+這個專案是我練習網頁資料擷取與自動化整理的成果，將原本需要人工瀏覽、篩選和複製的文章資訊，整理成可搜尋與保存的 CSV 報表。
