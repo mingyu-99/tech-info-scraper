@@ -15,5 +15,5 @@
 
 1. Clone 本專案：
 ```bash
-git clone https://github.com/mingyu-99/tech-info-scraper.git
+https://github.com/mingyu-99/tech-info-scraper.git
 cd tech-info-scraper
